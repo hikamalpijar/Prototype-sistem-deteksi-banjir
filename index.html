@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPSTONE PROJECT Kelompok 6A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .member {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+        .member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .member h3 {
+            margin: 10px 0 5px;
+        }
+        .poster {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .poster img {
+            width: 80%;
+            max-width: 841px;
+            border-radius: 10px;
+        }
+        .poster p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .poster h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .article {
+            text-align: left;
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .article h2 {
+            text-align: center;
+        }
+        .article p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAPSTONE PROJECT </h1>
+    <h2>Flood Detection System Prototype Using LoRa Technology </h2>
+    <h3>Kelompok 6A </h3>
+    <div class="container" id="memberList"></div>
+    
+    <div class="poster">
+        <h2>POSTER SISTEM DETEKSI BANJIR</h2>
+        <img src="Capstone project.jpg" alt="Poster sistem deteksi banjir">
+        <p>Deskripsi singkat tentang Prototype sistem deteksi banjir ini.</p>
+    </div>
+    
+    <div class="article">
+        <h2>Pendahuluan</h2>
+        <p>Garut pernah mengalami banjir bandang dahsyat pada tahun 2016, dan kejadian serupa kembali terjadi pada tahun 2022. Bencana ini mengakibatkan banyak kerugian baik bagi masyarakat maupun infrastruktur. Oleh karena itu, sistem deteksi banjir ini dibuat untuk membantu mengurangi dampak bencana dengan memberikan peringatan dini. Tujuan utama dari sistem ini adalah meminimalisir korban jiwa serta mengurangi kerusakan infrastruktur akibat banjir yang sering terjadi.</p>
+        
+        <h2> Cara Kerja Sistem </h2>
+        <p1> Prototype sistem deteksi banjir ini merupakan sebuah alat yang dapat memberikan peringatan dini jika terdapat potensi banjir sehingga dapat mengurangi resiko kerusakan dan korban. cara kerja dari sistem ini cukup sederhana, dimana terdapat dua sistem yaitu sistem yang berada di hulu sungai dan yang satunya lagi berada di hilir sungai. sistem di hulu sungai dilengkapi dengan sensor ultrasonik untuk mendeteksi jarak ketinggian air dan sensor waterflow untuk mendeteksi kecepatan air serta LED merah sebagai indikator bahaya apabila sistem di hulu mendeteksi lebih dari batas yang telah ditetapkan. kemudian sistem hulu akan memberikan pesan kondisi ke sistem hilir melalui komunikasi LoRa NRF24L01</p1>
+        <p2> Sistem yang berada di hilir sungai akan menerima data kondisi dari sistem hulu yang kemudian akan di proses dan menghasilkan output berupa kondisi yang di representasikan dalam LED Indikator (MERAH, KUNING, HIJAU), Buzzer dan LCD untuk menampilkan kondisi.</p2>
+        <p3> Adapun Parameter sistem ini adalah :</p3>
+        <p3> Kondisi bahaya = Ultrasonik mendeteksi jarak air: 0-5 cm & Waterflow: 0,5 Liter/menit.</p3>
+        <p3> Kondisi Peringatan = Ultrasonik mendeteksi jarak air: 6-10 cm.</p3>
+        <p3> Kondisi aman = Ultrasonik mendeteksi jarak air: >11 cm.</p3>
+        <p4> Apabila kondisi menunjukan aman, sistem akan menyalakan LED Hijau dan menampilkan "AMAN" pada LCD./p4>
+        <p5> dan Apabila kondisi menunjukan Peringatan, sistem akan menyalakan LED Kuning dan menyalakan Buzzer (berkedip) serta menampilkan "PERINGATAN" pada LCD.</p5>
+        <p5> Serta Apabila kondisi menunjukan Bahaya, sistem akan menyalakan LED Merah dan menyalakan Buzzer serta menampilkan "BAHAYA" pada LCD.</p5>
+            <h2>Penutup</h2>
+        <h2>Penutup</h2>
+        <p>Sistem deteksi banjir yang telah dirancang diharapkan dapat memberikan manfaat dalam upaya mitigasi bencana, khususnya di daerah yang sering mengalami banjir seperti Garut. Dengan adanya sistem ini, masyarakat dapat menerima peringatan dini sehingga dapat mengambil tindakan yang tepat untuk mengurangi risiko korban jiwa dan kerusakan infrastruktur. Ke depannya, sistem ini dapat dikembangkan lebih lanjut dengan peningkatan akurasi sensor dan integrasi dengan sistem pemantauan yang lebih luas agar manfaatnya semakin optimal.</p>
+    </div>
+
+    <script>
+        const members = [
+            { name: "Hikam Alpijar", image: "hikam1.jpg" },
+            { name: "Anggi Rahmat", image: "anggi3.jpg" },
+            { name: "Kaka Padlan Muharam", image: "padlan2.jpg" },
+            { name: "Hikmal faturohman", image: "hikmal4.jpg" },
+            { name: "Fajar Alkautsar", image: "fajar5.jpg" }
+
+        ];
+        
+        const memberList = document.getElementById("memberList");
+        members.forEach(member => {
+            const memberDiv = document.createElement("div");
+            memberDiv.classList.add("member");
+            memberDiv.innerHTML = `
+                <img src="${member.image}" alt="${member.name}">
+                <h3>${member.name}</h3>
+            `;
+            memberList.appendChild(memberDiv);
+        });
+    </script>
+</body>
+</html>
+
+
